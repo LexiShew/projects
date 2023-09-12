@@ -1,0 +1,13 @@
+Hello!
+
+This is the repository where I keep interesting projects that I've worked on through my classes at Tufts, as well as on my own time.
+
+For academic integrity, these projects are grouped in this repo and given names that differ from the names of homework assignments. This way, current students are less likely to come across this code.
+
+Some highlights:
+- Sentiment Analysis Classifier: written in Python, this project built and trained dozens of machine learning models to classify online reviews for restaurants, movies, etc. into "positive" or "negative" reviews. By tweaking model hyperparameters and comparing different types of models, I was able to achieve 83% accuracy on unseen test data.
+- Concurrent Metro Simulator: this Java program takes in a JSON files for the stations, lines, and passengers of a metro system. Then, each train runs concurrently to move passengers from their current station to their destination, making any specified transfers.
+- Simple Virtual Machine: this C program simulates the functionality of a custom ASM language. The program takes in ASM binary program files, then parses each instruction and simulates the program's functionality.
+- Quiz-Style Memorization Tool: after my favorite online memorization tool added a paywall, I wrote a terminal-based Python equivalent that reads vocabulary terms and their definitions, then applies customizable edit-distance comparisons to determine if the user memorized the term within a certain margin of error. Web version coming soon!
+
+Thanks for taking a look!
