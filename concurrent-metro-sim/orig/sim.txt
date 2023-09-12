@@ -1,0 +1,6 @@
+BoardEvent#replayAndCheck
+Station s1
+	currentTrain:	
+	passengers:	
+
+Train t1

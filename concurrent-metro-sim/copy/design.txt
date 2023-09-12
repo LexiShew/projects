@@ -1,0 +1,37 @@
+# Thread and Lock Design
+
+Overview:
+* There are three locks: an MBTA lock, a Passenger lock, and a Train lock.
+* There are two types of locks: locks for each Station that a Train can acquire,
+    and locks for each Train that a Passenger can acquire.
+* There's one main thread, plus each Train instance and each Passenger instance 
+    has its own thread.
+* All the Passenger instances vye for the lock of the Train that they're on, and all the Train
+    instance vye for the lock of the Station they're going to.
+
+Main thread:
+* This is where the MBTA is set up and the program gets coordinated.
+
+Passenger threads:
+* Each Passenger has its own thread. This allows for Passengers to make their
+    trips concurrently.
+* Passengers acquire the lock of the Train that they're boarding/deboarding.
+
+Train thread:
+* Each train has its own thread, allowing Trains to move concurrently.
+* Train threads acquire the lock of the Station they're moving towards or 
+    currently at.
+
+MBTA lock:
+* Keeps Trains, Stations, and Passenger aligned.
+* For example, a Train can't move while its Passenger are boarding/deboarding.
+
+Train lock:
+* Ensures that each Passenger can complete a full board/deboard event.
+* This lock gets acquired by a Passenger instance as they're getting on/off. 
+
+Station lock:
+* A maximum of one Train can be at a given Station at any one moment, so this
+    lock prevents Trains from moving to the same Station
+* If a Train has the lock but there's another Train at the next station, the
+    Train gives up the lock and `await()`s the release of the lock.

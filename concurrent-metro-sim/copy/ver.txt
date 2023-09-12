@@ -1,0 +1,241 @@
+{Board=class BoardEvent, Move=class MoveEvent, Deboard=class DeboardEvent}
+key: Board result: class BoardEvent
+key: Move result: class MoveEvent
+key: Move result: class MoveEvent
+key: Move result: class MoveEvent
+key: Move result: class MoveEvent
+key: Deboard result: class DeboardEvent
+key: Board result: class BoardEvent
+key: Move result: class MoveEvent
+key: Move result: class MoveEvent
+key: Move result: class MoveEvent
+key: Move result: class MoveEvent
+key: Deboard result: class DeboardEvent
+key: Board result: class BoardEvent
+key: Move result: class MoveEvent
+key: Move result: class MoveEvent
+key: Move result: class MoveEvent
+key: Move result: class MoveEvent
+key: Deboard result: class DeboardEvent
+key: Move result: class MoveEvent
+key: Move result: class MoveEvent
+BoardEvent#replayAndCheck
+Station s1
+	currentTrain:	t1
+	passengers:	 p1
+
+Train t1
+	currentStation:	s1
+	nextStation:	s2
+	currDirection:	FORWARD
+	stations:	 s1 s2 s3
+	passengers:	
+
+Passenger p1
+	currentTrain:	null
+	boardingStation:	s1
+	deboardingStation:	s3
+	stations:	 s1 s3 s5
+
+MoveEvent#replayAndCheck
+Train t1
+	currentStation:	s2
+	nextStation:	s3
+	currDirection:	FORWARD
+	stations:	 s1 s2 s3
+	passengers:	 p1
+
+MoveEvent#replayAndCheck
+Train t2
+	currentStation:	s4
+	nextStation:	s5
+	currDirection:	FORWARD
+	stations:	 s3 s4 s5
+	passengers:	
+
+MoveEvent#replayAndCheck
+Train t2
+	currentStation:	s5
+	nextStation:	s4
+	currDirection:	BACKWARD
+	stations:	 s3 s4 s5
+	passengers:	
+
+MoveEvent#replayAndCheck
+Train t1
+	currentStation:	s3
+	nextStation:	s2
+	currDirection:	BACKWARD
+	stations:	 s1 s2 s3
+	passengers:	 p1
+
+DeboardEvent#replayAndCheck
+Station s3
+	currentTrain:	t1
+	passengers:	 p2 p1
+
+Train t1
+	currentStation:	s3
+	nextStation:	s2
+	currDirection:	BACKWARD
+	stations:	 s1 s2 s3
+	passengers:	
+
+Passenger p1
+	currentTrain:	null
+	boardingStation:	s3
+	deboardingStation:	s5
+	stations:	 s1 s3 s5
+
+BoardEvent#replayAndCheck
+Station s3
+	currentTrain:	t1
+	passengers:	 p2 p1
+
+Train t1
+	currentStation:	s3
+	nextStation:	s2
+	currDirection:	BACKWARD
+	stations:	 s1 s2 s3
+	passengers:	
+
+Passenger p2
+	currentTrain:	null
+	boardingStation:	s3
+	deboardingStation:	s1
+	stations:	 s3 s1
+
+MoveEvent#replayAndCheck
+Train t2
+	currentStation:	s4
+	nextStation:	s3
+	currDirection:	BACKWARD
+	stations:	 s3 s4 s5
+	passengers:	
+
+MoveEvent#replayAndCheck
+Train t1
+	currentStation:	s2
+	nextStation:	s1
+	currDirection:	BACKWARD
+	stations:	 s1 s2 s3
+	passengers:	 p2
+
+MoveEvent#replayAndCheck
+Train t1
+	currentStation:	s1
+	nextStation:	s2
+	currDirection:	FORWARD
+	stations:	 s1 s2 s3
+	passengers:	 p2
+
+MoveEvent#replayAndCheck
+Train t2
+	currentStation:	s3
+	nextStation:	s4
+	currDirection:	FORWARD
+	stations:	 s3 s4 s5
+	passengers:	
+
+DeboardEvent#replayAndCheck
+Station s1
+	currentTrain:	t1
+	passengers:	 p2
+
+Train t1
+	currentStation:	s1
+	nextStation:	s2
+	currDirection:	FORWARD
+	stations:	 s1 s2 s3
+	passengers:	
+
+Passenger p2
+	currentTrain:	null
+	boardingStation:	s1
+	deboardingStation:	null
+	stations:	 s3 s1
+
+BoardEvent#replayAndCheck
+Station s3
+	currentTrain:	t2
+	passengers:	 p1
+
+Train t2
+	currentStation:	s3
+	nextStation:	s4
+	currDirection:	FORWARD
+	stations:	 s3 s4 s5
+	passengers:	
+
+Passenger p1
+	currentTrain:	null
+	boardingStation:	s3
+	deboardingStation:	s5
+	stations:	 s1 s3 s5
+
+MoveEvent#replayAndCheck
+Train t1
+	currentStation:	s2
+	nextStation:	s3
+	currDirection:	FORWARD
+	stations:	 s1 s2 s3
+	passengers:	
+
+MoveEvent#replayAndCheck
+Train t2
+	currentStation:	s4
+	nextStation:	s5
+	currDirection:	FORWARD
+	stations:	 s3 s4 s5
+	passengers:	 p1
+
+MoveEvent#replayAndCheck
+Train t1
+	currentStation:	s3
+	nextStation:	s2
+	currDirection:	BACKWARD
+	stations:	 s1 s2 s3
+	passengers:	
+
+MoveEvent#replayAndCheck
+Train t2
+	currentStation:	s5
+	nextStation:	s4
+	currDirection:	BACKWARD
+	stations:	 s3 s4 s5
+	passengers:	 p1
+
+DeboardEvent#replayAndCheck
+Station s5
+	currentTrain:	t2
+	passengers:	 p1
+
+Train t2
+	currentStation:	s5
+	nextStation:	s4
+	currDirection:	BACKWARD
+	stations:	 s3 s4 s5
+	passengers:	
+
+Passenger p1
+	currentTrain:	null
+	boardingStation:	s5
+	deboardingStation:	null
+	stations:	 s1 s3 s5
+
+MoveEvent#replayAndCheck
+Train t1
+	currentStation:	s2
+	nextStation:	s1
+	currDirection:	BACKWARD
+	stations:	 s1 s2 s3
+	passengers:	
+
+MoveEvent#replayAndCheck
+Train t2
+	currentStation:	s4
+	nextStation:	s3
+	currDirection:	BACKWARD
+	stations:	 s3 s4 s5
+	passengers:	
+

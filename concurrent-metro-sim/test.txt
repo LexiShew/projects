@@ -1,0 +1,111 @@
+pause
+pause
+	p1's current station is s1 and will deboard at s3
+
+Passenger p1 boards t1 at s1
+
+	p1's current station is s1 and will deboard at s3
+
+Train t2 moves from s3 to s4
+
+pause
+
+Train t1 moves from s1 to s2
+
+pause
+	p1's current station is s1 and will deboard at s3
+
+Train t2 moves from s4 to s5
+
+pause
+
+Train t1 moves from s2 to s3
+
+pause
+	p1's current station is s1 and will deboard at s3
+
+Passenger p1 deboards t1 at s3
+
+	p1's current station is s3 and will deboard at s5
+	p1's current station is s3 and will deboard at s5
+
+Train t2 moves from s5 to s4
+
+pause
+
+Train t1 moves from s3 to s2
+
+pause
+
+Train t2 moves from s4 to s3
+
+pause
+
+Passenger p1 boards t2 at s3
+
+	p1's current station is s3 and will deboard at s5
+
+Train t1 moves from s2 to s1
+
+pause
+
+Train t2 moves from s3 to s4
+
+pause
+	p1's current station is s3 and will deboard at s5
+
+Train t1 moves from s1 to s2
+
+pause
+
+Train t2 moves from s4 to s5
+
+pause
+	p1's current station is s3 and will deboard at s5
+
+Passenger p1 deboards t2 at s5
+
+
+Train t1 moves from s2 to s3
+
+    TrainThread -- finished!
+    TrainThread -- t1 releasing s2's lock
+
+Train t2 moves from s5 to s4
+
+    TrainThread -- finished!
+    TrainThread -- t2 releasing s5's lock
+DONE
+lines: t1 t2
+pass: p1
+lines:
+pass:
+trains: t1 t2
+passes: p1
+stations: s3 s4 s5 s1 s2
+trains:
+passes:
+stations:
+BoardEvent#replayAndCheck
+Station s1
+	currentTrain:	
+	passengers:	
+
+Train t1
+	currentStation:	s3
+	nextStation:	s2
+	currDirection:	BACKWARD
+	stations:	 s1 s2 s3
+	passengers:	
+
+Passenger p1
+	currentTrain:	null
+	boardingStation:	s5
+	p1 arrived at s5
+	deboardingStation:	null
+	stations:	 s1 s3 s5
+
+BoardEvent
+	p.boardingStation(): s5
+	t.currentStation(): s3
+	s: s1
